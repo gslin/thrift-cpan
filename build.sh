@@ -13,7 +13,7 @@ else
     VERSION="$1"
 fi
 
-TMPDIR=/tmp/libthrift-perl
+TMPDIR=/tmp/thrift-cpan
 TARBALL="thrift-${VERSION}.tar.gz"
 
 rm -rf -- "${TMPDIR}"
