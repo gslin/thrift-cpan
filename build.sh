@@ -24,6 +24,10 @@ wget -c "http://apache.stu.edu.tw/thrift/${VERSION}/${TARBALL}"
 tar -zxv -f "${TARBALL}"
 
 cd "thrift-${VERSION}/lib/perl"
+
+# patch version
+find . -name '*.pm' | xargs grep -HL '^our \$VERSION' | xargs -n1 sed -i -e "/^package /a our \$VERSION='${VERSION}';"
+
 perl Makefile.PL
 make
 make manifest
