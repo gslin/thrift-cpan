@@ -21,3 +21,10 @@ mkdir -p "${TMPDIR}"
 
 cd "${TMPDIR}"
 wget -c "http://apache.stu.edu.tw/thrift/${VERSION}/${TARBALL}"
+tar -zxv -f "${TARBALL}"
+
+cd "thrift-${VERSION}/lib/perl"
+perl Makefile.PL
+make
+make manifest
+make dist
